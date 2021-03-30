@@ -8,11 +8,11 @@ public class App {
     }
 
     public static void playGame() {
-        Scanner sc = new Scanner(System.in);
         boolean playing = true;
+        String playerName = getName();
         //Add basic logic to play game here
         while(playing){
-            System.out.println("Would you like to continue playing?");
+            System.out.println(playerName + " would you like to continue playing?");
             System.out.println("1: yes");
             System.out.println("2: no");
             int choice = sc.nextInt();
@@ -30,4 +30,13 @@ public class App {
             }
         }
     }
+
+    public static String getName() {
+        System.out.println("What is your name?");
+        String name = sc.nextLine();
+
+        return name;
+    }
+
+    static Scanner sc = new Scanner(System.in);
 }
