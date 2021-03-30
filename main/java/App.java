@@ -23,6 +23,9 @@ public class App {
                 System.out.println("1: yes");
                 System.out.println("2: no");
                 choice = sc.nextInt();
+                if(choice == 2){
+                    break;
+                }
             } else {
                 System.out.println("You quit the game");
                 playing = false;
