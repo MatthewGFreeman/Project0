@@ -19,12 +19,16 @@ public class App {
             System.out.println(choice);
             if(choice == 1){
                 System.out.println("You are playing the game");
-                System.out.println("Would you like to continue playing?");
-                System.out.println("1: yes");
-                System.out.println("2: no");
+                System.out.println("What would you like to do?");
+                System.out.println("1: Check bag");
+                System.out.println("2: Quit game");
                 choice = sc.nextInt();
                 if(choice == 2){
                     break;
+                }
+                
+                if (choice == 1) {
+                    checkBag();
                 }
             } else {
                 System.out.println("You quit the game");
@@ -39,6 +43,12 @@ public class App {
         String name = sc.nextLine();
 
         return name;
+    }
+
+    public static void checkBag() {
+        System.out.println("Checking bag");
+        //Needs to iterate over a bag(array) to show items
+        //If no items, needs to print no items
     }
 
     static Scanner sc = new Scanner(System.in);
