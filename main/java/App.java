@@ -36,6 +36,16 @@ public class App {
                 if(input.equals("1")) {
                     if(randomNumber.nextInt(100) < findItemChance) {
                         System.out.println("You found an item!");
+                        System.out.println("\tWhat would you like to do?");
+                        System.out.println("\t1. Put the item in my bag.");
+                        System.out.println("\t2. Leave it where it is.");
+                        String choice = sc.nextLine();
+                        if(choice.equals("1")) {
+                            System.out.println("You put the item in your bag!");
+                        } else {
+                            System.out.println("You leave the item alone.");
+                            continue;
+                        }
                     } else {
                         System.out.println("The " + searchableItem + " was empty!");
                         continue;
