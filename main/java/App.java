@@ -16,7 +16,6 @@ public class App {
             System.out.println("1: yes");
             System.out.println("2: no");
             int choice = sc.nextInt();
-            System.out.println(choice);
             if(choice == 1){
                 System.out.println("You are playing the game");
                 System.out.println("What would you like to do?");
