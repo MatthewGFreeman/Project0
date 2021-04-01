@@ -1,54 +1,61 @@
 package main.java;
 
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        playGame();
-    }
+        // int damageDealt = rand.nextInt(attackDamage);
+        Scanner sc = new Scanner(System.in);
+        Random randomNumber = new Random();
 
-    public static void playGame() {
-        boolean playing = true;
-        String playerName = getName();
-        //Add basic logic to play game here
-        while(playing){
-            System.out.println(playerName + " would you like to continue playing?");
-            System.out.println("1: yes");
-            System.out.println("2: no");
-            int choice = sc.nextInt();
-            if(choice == 1){
-                System.out.println("You are playing the game");
-                System.out.println("What would you like to do?");
-                System.out.println("1: Check bag");
-                System.out.println("2: Quit game");
-                choice = sc.nextInt();
-                if(choice == 2){
+        String[] furniture = {"Chest", "Bookcase"};
+        String[] collectibles = {"Gem", "Ring", "Necklace"};
+        ArrayList<String> bag = new ArrayList<>();
+        int findItemChance = 66;
+        int gemDropChance = 33;
+        int ringDropChance = 50;
+        int necklaceropChance = 50;
+        //New tag line needed
+        System.out.println("Welcome to the Castle!");
+        boolean searching = true;
+        // GAME:
+        while(searching) {
+            while(bag.size() < 3){
+                System.out.println("----------------------------------------");
+    
+                //enemy info not needed, change to items?
+                String searchableItem = furniture[randomNumber.nextInt(furniture.length)];
+                System.out.println("\t# You find a " + searchableItem + "! \n");
+                System.out.println("\n\tWhat would you like to do?");
+                System.out.println("\t1. Search " + searchableItem + ".");
+                System.out.println("\t2. Leave it alone and keep looking");
+                System.out.println("\t3. Leave the castle");
+                String input = sc.nextLine();
+                if(input.equals("1")) {
+                    if(randomNumber.nextInt(100) < findItemChance) {
+                        System.out.println("You found an item!");
+                    } else {
+                        System.out.println("The " + searchableItem + " was empty!");
+                        continue;
+                    }
+                } else if(input.equals("2")){
+                    continue;
+                } else if(input.equals("3")) {
                     break;
+                } else {
+                    System.out.println("Invlaid command!");
                 }
-                
-                if (choice == 1) {
-                    checkBag();
-                }
-            } else {
-                System.out.println("You quit the game");
-                playing = false;
-                sc.close();
             }
+            System.out.println("##########################");
+            System.out.println("    THANKS FOR PLAYING    ");
+            System.out.println("##########################");
+            searching = false;
+            
+            sc.close();
         }
+
     }
 
-    public static String getName() {
-        System.out.println("What is your name?");
-        String name = sc.nextLine();
-
-        return name;
-    }
-
-    public static void checkBag() {
-        System.out.println("Checking bag");
-        //Needs to iterate over a bag(array) to show items
-        //If no items, needs to print no items
-    }
-
-    static Scanner sc = new Scanner(System.in);
 }
