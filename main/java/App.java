@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        // int damageDealt = rand.nextInt(attackDamage);
         Scanner sc = new Scanner(System.in);
         Random randomNumber = new Random();
 
@@ -14,10 +13,7 @@ public class App {
         String[] collectibles = {"Gem", "Ring", "Necklace"};
         ArrayList<String> bag = new ArrayList<>();
         int findItemChance = 66;
-        int gemDropChance = 33;
-        int ringDropChance = 50;
-        int necklaceropChance = 50;
-        //New tag line needed and cooler formatting please
+
         System.out.println("###################################################################");
         System.out.println("###############     Welcome to the Castle     #####################");
         System.out.println("###################################################################");
@@ -27,12 +23,11 @@ public class App {
         System.out.println("\tPlace the collectibles in your bag.");
         System.out.println("\tCollect three items to win!");
         boolean searching = true;
-        // GAME:
+
         while(searching) {
             while(bag.size() < 3){
                 System.out.println("-------------------------------------------------------------------");
     
-                //enemy info not needed, change to items?
                 String searchableItem = furniture[randomNumber.nextInt(furniture.length)];
                 System.out.println("\t# You find a " + searchableItem + "! \n");
                 System.out.println("\n\tWhat would you like to do?");
