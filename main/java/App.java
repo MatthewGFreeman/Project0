@@ -35,15 +35,17 @@ public class App {
                 String input = sc.nextLine();
                 if(input.equals("1")) {
                     if(randomNumber.nextInt(100) < findItemChance) {
-                        System.out.println("You found an item!");
+                        String foundItem = collectibles[randomNumber.nextInt(collectibles.length)];
+                        System.out.println("You found a " + foundItem + "!");
                         System.out.println("\tWhat would you like to do?");
                         System.out.println("\t1. Put the item in my bag.");
                         System.out.println("\t2. Leave it where it is.");
                         String choice = sc.nextLine();
                         if(choice.equals("1")) {
-                            System.out.println("You put the item in your bag!");
+                            bag.add(foundItem);
+                            System.out.println("You put the " + foundItem + " in your bag!");
                         } else {
-                            System.out.println("You leave the item alone.");
+                            System.out.println("You leave the " + foundItem + " alone.");
                             continue;
                         }
                     } else {
