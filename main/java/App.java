@@ -10,7 +10,13 @@ public class App {
     public static void main(String[] args) {
         //Make class for player, include name and bag?
         ArrayList<String> bag = new ArrayList<>();
+        boolean searching = true;
 
+        greetingMessage();
+
+        gamePlay(searching, bag);
+    }
+    public static void greetingMessage() {
         System.out.println("###################################################################");
         System.out.println("###############     Welcome to the Castle     #####################");
         System.out.println("###################################################################");
@@ -19,12 +25,8 @@ public class App {
         System.out.println("\tSearch these pieces to find collectible items.");
         System.out.println("\tPlace the collectibles in your bag.");
         System.out.println("\tCollect three items to win!");
-
-        boolean searching = true;
-
-        gamePlay(searching, bag);
     }
-
+    
     public static void gamePlay(boolean playing, ArrayList<String> pack){
         while(playing) {
             //Make classes for items and bag?
