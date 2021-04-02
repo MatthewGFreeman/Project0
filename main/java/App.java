@@ -18,9 +18,9 @@ public class App {
         int ringDropChance = 50;
         int necklaceropChance = 50;
         //New tag line needed and cooler formatting please
-        System.out.println("##########################");
-        System.out.println("  Welcome to the Castle   ");
-        System.out.println("##########################");
+        System.out.println("###################################################################");
+        System.out.println("###############     Welcome to the Castle     #####################");
+        System.out.println("###################################################################");
         System.out.println("\tYour goal is to collect three items.");
         System.out.println("\tAs you search the castle you will come across some furniture.");
         System.out.println("\tSearch these pieces to find collectible items.");
@@ -30,7 +30,7 @@ public class App {
         // GAME:
         while(searching) {
             while(bag.size() < 3){
-                System.out.println("----------------------------------------");
+                System.out.println("-------------------------------------------------------------------");
     
                 //enemy info not needed, change to items?
                 String searchableItem = furniture[randomNumber.nextInt(furniture.length)];
@@ -73,9 +73,9 @@ public class App {
                     System.out.println("Invlaid command!");
                 }
             }
-            System.out.println("##########################");
-            System.out.println("    THANKS FOR PLAYING    ");
-            System.out.println("##########################");
+            System.out.println("###################################################################");
+            System.out.println("################     Thanks for playing!     ######################");
+            System.out.println("###################################################################");
             searching = false;
             
             sc.close();
