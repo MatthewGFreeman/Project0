@@ -4,11 +4,19 @@
 package App;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        greetingMessage();
+    }
+
+    public static void greetingMessage() {
+        System.out.println("###################################################################");
+        System.out.println("###############     Welcome to the Castle     #####################");
+        System.out.println("###################################################################");
+        System.out.println("\tYour goal is to collect three items.");
+        System.out.println("\tAs you search the castle you will come across some furniture.");
+        System.out.println("\tSearch these pieces to find collectible items.");
+        System.out.println("\tPlace the collectibles in your bag.");
+        System.out.println("\tCollect three items to win!");
     }
 }
